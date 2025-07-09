@@ -79,7 +79,7 @@
         <a href="/addBook"><button class="login-btn">Add Book</button></a><br>
         <a href="/updateBook"><button class="login-btn">Update Book</button></a>
         
-        <a href="/delete"><button class="login-btn">Delete Book</button></a><br>
+        <a href="/deleteBook"><button class="login-btn">Delete Book</button></a><br>
         <a href="/viewBooks"><button class="login-btn">View Books</button></a><br>
         <a href="/logout"><button class="logout-btn">Logout</button></a>
 

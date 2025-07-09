@@ -1,5 +1,3 @@
-
-
 package com.example.BookStore.controller;
 
 import java.util.List;
@@ -70,27 +68,38 @@ public class Controller1 {
         return "addBook";
     }
 
+    // ✅ Updated Update Workflow
+
+    // Show the update page (to enter Book ID)
     @GetMapping("/updateBook")
     public String updateBookPage() {
-        return "update";
+        return "update"; // update.jsp to enter Book ID
     }
 
-    @GetMapping("/getBookForUpdate")
-    public String getBookForUpdate(@RequestParam int bookNo, Model model) {
+    // Fetch Book Details based on Book ID
+    @PostMapping("/fetchBook")
+    public String fetchBook(@RequestParam int bookNo, Model model) {
         BookModel book = bookRepo.findById(bookNo).orElse(null);
         if (book != null) {
             model.addAttribute("book", book);
+            model.addAttribute("fetched", true); // Used to show book form
         } else {
             model.addAttribute("error", "Book ID not found!");
         }
         return "update";
     }
 
+    // Handle Book Update Submission
     @PostMapping("/updateBookDetails")
     public String updateBookDetails(@ModelAttribute BookModel book, Model model) {
         bookRepo.save(book);
         model.addAttribute("message", "Book Updated Successfully!");
         return "update";
+    }
+    
+    @GetMapping("/opertions")
+    public String opertionsPage() {
+        return "opertions";
     }
 
     @GetMapping("/deleteBook")
@@ -100,8 +109,17 @@ public class Controller1 {
 
     @PostMapping("/deleteBook")
     public String deleteBook(@RequestParam int bookNo, Model model) {
-        bookRepo.deleteById(bookNo);
-        model.addAttribute("message", "Book Deleted Successfully!");
+        try {
+            if (bookRepo.existsById(bookNo)) {
+                bookRepo.deleteById(bookNo);
+                model.addAttribute("message", "Book Deleted Successfully!");
+            } else {
+                model.addAttribute("error", "Book ID not found!");
+            }
+        } catch (Exception e) {
+            model.addAttribute("error", "An unexpected error occurred.");
+        }
         return "delete";
     }
+
 }

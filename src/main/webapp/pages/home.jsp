@@ -158,29 +158,29 @@
             <h2>Special 50% Off</h2>
             <p>For our student community. Explore the best books at discounted prices.</p>
         </div>
-        <img src="https://via.placeholder.com/400" alt="Banner Image">
+        <img src="/pages/Images/Book1.png" alt="Banner Image">
     </div>
 
     <div class="book-section">
         <h3 class="section-title">Recommended for You</h3>
         <div class="book-list">
             <div class="book-card">
-                <img src="https://via.placeholder.com/150" alt="Book Image">
+                <img src="/pages/Images/Book1.png" alt="Book Image">
                 <h4>Book Title 1</h4>
                 <p>Author Name</p>
             </div>
             <div class="book-card">
-                <img src="https://via.placeholder.com/150" alt="Book Image">
+                <img src="/pages/Images/Book2.png" alt="Book Image">
                 <h4>Book Title 2</h4>
                 <p>Author Name</p>
             </div>
             <div class="book-card">
-                <img src="https://via.placeholder.com/150" alt="Book Image">
+                <img src="/pages/Images/Book3.png" alt="Book Image">
                 <h4>Book Title 3</h4>
                 <p>Author Name</p>
             </div>
             <div class="book-card">
-                <img src="https://via.placeholder.com/150" alt="Book Image">
+                <img src="/pages/Images/Book4.png" alt="Book Image">
                 <h4>Book Title 4</h4>
                 <p>Author Name</p>
             </div>
