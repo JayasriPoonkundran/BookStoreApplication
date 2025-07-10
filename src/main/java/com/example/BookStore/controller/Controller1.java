@@ -23,11 +23,14 @@ public class Controller1 {
 
     @Autowired
     BookRepository bookRepo;
+    
+    
 
     @GetMapping("/home")
     public String home() {
-        return "home";
+        return "home";  // means home.jsp in /pages/
     }
+
 
     @GetMapping("/login1")
     public String login() {
